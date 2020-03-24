@@ -9,13 +9,7 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
-
 variables:
-  repositoryName: $[variables.repository_Name]
-  organizationName: $[variables.organization_Name]
-  projectName: $[variables.project_Name]
-  userName: $[variables.user_Name]
-  passwordToken: $[variables.password_Token]
   param1: $[variables.parameter1]
   param2: $[variables.parameter2]
   pythonVersion: '3.7'
@@ -40,6 +34,14 @@ stages:
          - script: |
              pip install requests
              python deleteRepo.py $(param1) $(param2)
-           displayName: 'run_code'
+           displayName: 'setting_variable_value'
           
 - stage: FetchVariable
+  jobs:
+  - job: 
+    steps:
+    - task: PythonScript@0
+      inputs:
+        scriptSource: 'filePath'
+        scriptPath: '$(System.DefaultWorkingDirectory).deleteRepo.py'
+        arguments: '3 3'
