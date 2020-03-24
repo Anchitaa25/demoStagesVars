@@ -20,7 +20,6 @@ def deleteRepository():
   delete_repo_request = requests.delete(url = delete_URL, auth =  (User_Name,Personal_Token))
 
 try:
-  deleteRepository()
   add()
   print(result)
 except KeyError:
