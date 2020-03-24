@@ -40,3 +40,4 @@ stages:
              pip install requests
              python deleteRepo.py $(repositoryName) $(organizationName) $(projectName) $(userName) $(passwordToken) $(param1) $(param2)
            displayName: 'run_code'
+- stage: FetchVariable
