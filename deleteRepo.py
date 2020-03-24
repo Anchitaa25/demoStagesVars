@@ -1,13 +1,9 @@
 import json
 import sys
 import requests
-Organization_Name = sys.argv[2]
-Project_Name = sys.argv[3]
-Repository_Name = sys.argv[1]
-User_Name = sys.argv[4]
-Personal_Token = sys.argv[5]
-param1 = sys.argv[6]
-param2 = sys.argv[7]
+
+param1 = sys.argv[1]
+param2 = sys.argv[2]
 def add():
   result = param1 + param2
   return result
