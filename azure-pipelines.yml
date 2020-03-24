@@ -16,6 +16,8 @@ variables:
   projectName: $[variables.project_Name]
   userName: $[variables.user_Name]
   passwordToken: $[variables.password_Token]
+  param1: $[variables.parameter1]
+  param2: $[variables.paramater2]
   pythonVersion: '3.7'
 
 stages:
@@ -36,5 +38,5 @@ stages:
 
          - script: |
              pip install requests
-             python deleteRepo.py $(repositoryName) $(organizationName) $(projectName) $(userName) $(passwordToken)
+             python deleteRepo.py $(repositoryName) $(organizationName) $(projectName) $(userName) $(passwordToken) $(param1) $(param2)
            displayName: 'run_code'
