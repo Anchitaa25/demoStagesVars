@@ -17,7 +17,7 @@ variables:
   userName: $[variables.user_Name]
   passwordToken: $[variables.password_Token]
   param1: $[variables.parameter1]
-  param2: $[variables.paramater2]
+  param2: $[variables.parameter2]
   pythonVersion: '3.7'
 
 stages:
