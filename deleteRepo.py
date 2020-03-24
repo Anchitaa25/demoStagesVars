@@ -21,7 +21,8 @@ def deleteRepository():
 
 try:
   deleteRepository()
-  add()
+  a = add()
+  print a
 except KeyError:
   print("URL Incorrect. Check values for Repository/Organization/Project Name")
 except ValueError:
