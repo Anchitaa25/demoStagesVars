@@ -35,13 +35,19 @@ stages:
              pip install requests
              python deleteRepo.py $(param1) $(param2)
            displayName: 'setting_variable_value'
+         - bash: |
+             result:"45"
+             mkdir -p $(Pipeline.Workspace)/variables
+             echo "$result" > $(Pipeline.Workspace)/variables/result
+         - publish: $(Pipeline.Workspace)/variables
+           artifact: variables
           
-- stage: FetchVariable
-  jobs:
-  - job: 
-    steps:
-    - task: PythonScript@0
-      inputs:
-        scriptSource: 'filePath'
-        scriptPath: '$(System.DefaultWorkingDirectory).deleteRepo.py'
-        arguments: '3 3'
+#- stage: FetchVariable
+#  jobs:
+#  - job: 
+#    steps:
+#    - task: PythonScript@0
+#      inputs:
+#        scriptSource: 'filePath'
+#        scriptPath: '$(System.DefaultWorkingDirectory).deleteRepo.py'
+#        arguments: '3 3'
