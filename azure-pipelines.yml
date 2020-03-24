@@ -19,6 +19,7 @@ variables:
   param1: $[variables.parameter1]
   param2: $[variables.parameter2]
   pythonVersion: '3.7'
+  answer: $[variables.result]
 
 stages:
 - stage: Build
@@ -40,4 +41,5 @@ stages:
              pip install requests
              python deleteRepo.py $(repositoryName) $(organizationName) $(projectName) $(userName) $(passwordToken) $(param1) $(param2)
            displayName: 'run_code'
+          
 - stage: FetchVariable
