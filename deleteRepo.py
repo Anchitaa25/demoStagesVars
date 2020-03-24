@@ -10,6 +10,7 @@ param1 = sys.argv[6]
 param2 = sys.argv[7]
 def add():
   result = param1 + param2
+  return result
 def deleteRepository():
   get_URL = 'https://dev.azure.com/'+Organization_Name+'/'+Project_Name+'/_apis/git/repositories/'+Repository_Name+'?api-version=5.1'
   get_ID_request = requests.get(url = get_URL , auth = (User_Name,Personal_Token))
