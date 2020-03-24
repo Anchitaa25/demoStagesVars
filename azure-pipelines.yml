@@ -22,7 +22,7 @@ variables:
   answer: $[variables.result]
 
 stages:
-- stage: Build
+- stage: Set Variable Value
   jobs:                
      - job:
        steps:
