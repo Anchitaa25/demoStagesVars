@@ -20,8 +20,8 @@ def deleteRepository():
   delete_repo_request = requests.delete(url = delete_URL, auth =  (User_Name,Personal_Token))
 
 try:
-  add()
-  print(result)
+  a = add()
+  print(a)
 except KeyError:
   print("URL Incorrect. Check values for Repository/Organization/Project Name")
 except ValueError:
