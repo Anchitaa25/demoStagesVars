@@ -49,7 +49,7 @@ stages:
       - download: current
         artifact: variables
       - bash: |
-          result=$(cat $(Pipeline.Workspace)/variables/FOO)
+          result=$(cat $(Pipeline.Workspace)/variables/result)
           echo "##vso[task.setvariable variable=result]$result"
 
       - bash: |
